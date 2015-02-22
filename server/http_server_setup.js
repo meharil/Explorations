@@ -45,4 +45,4 @@ function isFormData(req) {
 	return 0 == type.indexOf('multipart/form-data');
 }
 
-server.listen(8080);
+server.listen(80);
