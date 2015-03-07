@@ -31,7 +31,8 @@ var db = {
 };
 
 function users(req, res, next) {
-	var match = req.url.match(/^\/user\/(.+)/)
+	var match = req.url.match(/^\/user\/(.+)/);
+	console.log("match", match)
 	if (match) {
 		var user = db.users[match[1]];
 		if (user) {
