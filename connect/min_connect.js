@@ -23,6 +23,7 @@ function restrict(req, res, next){
 	authenticateWithDB(user, pass, function(err) {
 
 		if (err) return next(err);
+		console.log("err", err);
 		next();
 	});
 }
@@ -30,7 +31,12 @@ function restrict(req, res, next){
 function authenticateWithDB(user, pass) {
 	console.log('user/pass', user, pass);
 	if (user != 'ml' && pass != 'ml')
+	{
+		console.log("user/pass incorrect")
 		throw Error("Unauthorized");
+	}
+	console.log("continue");
+		
 }
 
 function admin(req, res, next) {
