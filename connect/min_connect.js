@@ -27,6 +27,11 @@ function restrict(req, res, next){
 	});
 }
 
+function authenticateWithDB(user, pass) {
+	if (user != 'ml' && pass != 'ml')
+		throw Error("Unauthorized");
+}
+
 function admin(req, res, next) {
 	switch (req.url) {
 		case '/':
