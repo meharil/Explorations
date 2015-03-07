@@ -23,7 +23,7 @@ function restrict(req, res, next){
 	authenticateWithDB(user, pass, function(err) {
 
 		if (err) return next(err);
-		if (user == 'ml' && pass == 'ml') next();
+		next();
 	});
 }
 
