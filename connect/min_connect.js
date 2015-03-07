@@ -20,11 +20,19 @@ function restrict(req, res, next){
 	var user = auth[0]
 	var pass = auth[1];
 
-	authenticateWithDB(user, pass, function(err) {
-
-		if (err) return next(err);
-		console.log("err", err);
+	if (user != 'ml' || pass != 'ml')
+	{
+		console.log("user/pass incorrect")
+		return next(new Error('Unauthorized/incorrect'));
+	}
+	else
 		next();
+
+	//authenticateWithDB(user, pass, function(err) {
+
+		/*if (err) return next(err);
+		console.log("err", err);
+		next();*/
 	});
 }
 
