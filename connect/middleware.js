@@ -36,7 +36,12 @@ function users(req, res, next) {
 	var match = req.url.match(/^\/user\/(.+)/);
 	console.log("match", match, match[1])
 	if (match) {
-		var user = db.users[match[1]];
+		var user;
+		for (i=0; i < db.users.length; i++)
+		{
+			if (db.users[i].name == match[1])
+				user = db.user[i].name;
+		}
 		console.log("user", db, user, db.users[match[1]])
 		if (user) {
 			res.setHeader('Content-Type', 'application/json');
