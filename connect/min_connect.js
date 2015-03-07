@@ -1,6 +1,7 @@
 var connect = require('connect');
 var app = connect();
 app.use(logger);
+app.use(hello);
 app.listen(3000);
 
 
