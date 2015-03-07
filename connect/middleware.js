@@ -40,7 +40,7 @@ function users(req, res, next) {
 		for (i=0; i < db.users.length; i++)
 		{
 			if (db.users[i].name == match[1])
-				user = db.user[i].name;
+				user = db.users[i].name;
 		}
 		console.log("user", db, user, db.users[match[1]])
 		if (user) {
