@@ -1,3 +1,5 @@
+var connect = require('connect');
+
 var api = connect()
 	.use(users)
 	.use(pets)
