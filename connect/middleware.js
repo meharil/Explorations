@@ -1,5 +1,14 @@
 var connect = require('connect');
 
+//users middeleware
+var db = {
+	users: [
+	{name: 'tobi'},
+	{name: 'loki'},
+	{name: 'jane'}
+	]
+};
+
 var api = connect()
 	.use(users)
 	.use(pets)
@@ -21,14 +30,7 @@ function hello(req, res, next) {
 	}
 }
 
-//users middeleware
-var db = {
-	users: [
-	{name: 'tobi'},
-	{name: 'loki'},
-	{name: 'jane'}
-	]
-};
+
 
 function users(req, res, next) {
 	var match = req.url.match(/^\/user\/(.+)/);
