@@ -35,7 +35,9 @@ function authenticateWithDB(user, pass) {
 		console.log("user/pass incorrect")
 		throw Error("Unauthorized");
 	}
-	console.log("continue");
+	else
+		return
+	//console.log("continue");
 		
 }
 
