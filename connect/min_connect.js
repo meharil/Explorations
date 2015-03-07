@@ -28,6 +28,7 @@ function restrict(req, res, next){
 }
 
 function authenticateWithDB(user, pass) {
+	console.log('user/pass', user, pass);
 	if (user != 'ml' && pass != 'ml')
 		throw Error("Unauthorized");
 }
