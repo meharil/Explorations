@@ -37,7 +37,7 @@ function users(req, res, next) {
 	console.log("match", match, match[1])
 	if (match) {
 		var user = db.users[match[1]];
-		console.log("user", user, db.users[match[1]])
+		console.log("user", db, user, db.users[match[1]])
 		if (user) {
 			res.setHeader('Content-Type', 'application/json');
 			res.end(JSON.stringify(user));
