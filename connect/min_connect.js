@@ -33,7 +33,7 @@ function restrict(req, res, next){
 		/*if (err) return next(err);
 		console.log("err", err);
 		next();*/
-	});
+	//});
 }
 
 function authenticateWithDB(user, pass) {
