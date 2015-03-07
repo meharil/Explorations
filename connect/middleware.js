@@ -32,9 +32,10 @@ var db = {
 
 function users(req, res, next) {
 	var match = req.url.match(/^\/user\/(.+)/);
-	console.log("match", match)
+	console.log("match", match, match[1])
 	if (match) {
 		var user = db.users[match[1]];
+		console.log("user", user, db.users[match[1]])
 		if (user) {
 			res.setHeader('Content-Type', 'application/json');
 			res.end(JSON.stringify(user));
