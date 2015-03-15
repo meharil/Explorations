@@ -1,7 +1,8 @@
 var connect = require('connect');
+var cookieParser = require('cookie-parser');
 
 var app = connect()
-	.use(connect.cookieParser('tobi is a ferret'))
+	.use(cookieParser('tobi is a ferret'))
 	.use(function(req, res) {
 		console.log(req.cookies);
 		console.log(req.signedCookies);
