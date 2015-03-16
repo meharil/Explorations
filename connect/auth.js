@@ -11,7 +11,7 @@ var app = connect()
 			console.log('your in!');
 			next();
 		}
-	});
+	})
 	.use(function (req, res) {
 		res.end("I'm a secret\n");
 	});
