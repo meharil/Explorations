@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 	}).listen(3000);*/
 
 var app = connect()
-	.use(bodyParser.urlencoded({extended:true}))
+	.use(bodyParser.raw())
 	.use(function(req, res) {
 		console.log(req.body);
 		console.log(req.files);
