@@ -1,6 +1,8 @@
 var connect = require('connect');
+var morgan = require('morgan');
+
 var app = connect()
-	.use(connect.logger())
+	.use(morgan('combined'))
 	.use(hello)
 	.listen(3000);
 
