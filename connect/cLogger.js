@@ -2,7 +2,7 @@ var connect = require('connect');
 var morgan = require('morgan');
 
 var app = connect()
-	.use(morgan('combined'))
+	.use(morgan(':method :url'))
 	.use(hello)
 	.listen(3000);
 
