@@ -27,8 +27,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/', routes);
-//app.use('/', photos.list);
-app.use('/upload', photos.form);
+app.get('/', photos.list);
+app.get('/upload', photos.form);
 app.post('/upload', photos.submit(app.get('photos')));
 app.use('/users', users);
 
