@@ -35,6 +35,7 @@ exports.list = function(req, res){
 };
 
 exports.form = function(req, res){
+	console.log('show form');
 	res.render('photos/upload', {
 		title: 'Photo upload'
 	})
