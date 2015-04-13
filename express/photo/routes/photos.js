@@ -43,10 +43,12 @@ exports.form = function(req, res){
 
 exports.submit = function (dir) {
 	return function(req, res, next){
-		console.log("req files", req.files, req.files['photo[image]']);
+		console.log("req files", req.files, req.files['photo[image']);
+
 		var img = req.files['photo[image]'];
 		var name = req.body.photo.name || img.name;
 		var path = join(dir, img.name);
+		console.log('file name', req.body.photo.name, img.name)
 		fs.rename(img.path, path, function(err) {
 			if(err) return next(err);
 			Photo.create({
