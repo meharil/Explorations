@@ -29,8 +29,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.locals({
-  db_string: 'mongodb://meharil:Shady_1@ds039010.mongolab.com:39010/node-db';
-})
+  db_string: 'mongodb://meharil:Shady_1@ds039010.mongolab.com:39010/node-db'
+});
 //app.use('/', routes);
 app.get('/', photos.list);
 app.get('/upload', photos.form);
