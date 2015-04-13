@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/', routes);
 app.get('/', photos.list);
 app.get('/upload', photos.form);
+app.get('/photo/:id/download', photos.download(app.get('photos')));
 app.post('/upload', photos.submit(app.get('photos')));
 app.use('/users', users);
 
