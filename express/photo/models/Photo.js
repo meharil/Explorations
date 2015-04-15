@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var fs = require('fs');
 
-var stream = fs.createReadStream(__dirname + 'public/settings/settings');
+var stream = fs.createReadStream('../../public/settings/settings');
 stream.on('data', function(chunk){
 	var setting = JSON.parse(chunk);
 	mongoose.connect(setting.replace(/(\:\/\/)/, '://'+obj.user+':'+obj.password+'@'));
