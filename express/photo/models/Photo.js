@@ -4,7 +4,7 @@ var fs = require('fs');
 var stream = fs.createReadStream(__dirname + '/settings/settings');
 stream.on('data', function(chunk){
 	var setting = JSON.parse(chunk);
-	mongoose.connect(setting.replace(/(\:\/\/)/, '://'+obj.user+':'+obj.password+'@'));
+	mongoose.connect(setting.dbpath.replace(/(\:\/\/)/, '://'+setting.user+':'+setting.password+'@'));
 
 });
 stream.on('error', function(err) {
