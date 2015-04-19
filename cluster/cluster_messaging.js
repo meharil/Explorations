@@ -5,6 +5,7 @@ var workers = {};
 var requests = 0;
 
 if (cluster.isMaster) {
+	console.log('numCPUs '+ numCPUs);
 	for (var i=0; i<numCPUs;i++){
 		workers[i] = cluster.fork();
 
