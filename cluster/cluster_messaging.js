@@ -29,7 +29,7 @@ if (cluster.isMaster) {
 } else {
 
 	process.on('message', function(message) {
-		if (message.cmod == 'updateOfRequestTotal') {
+		if (message.cmd == 'updateOfRequestTotal') {
 			requests = message.requests;
 		}
 	});
