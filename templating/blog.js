@@ -37,7 +37,7 @@ console.log(entries);
 
 function blogPage(entries) {
 	var values = {entries: entries};
-	return ejs.render(template, {locals: values});
+	return ejs.render(template, {entries: entries});
 }
 
 var server = http.createServer(function(req, res) {
